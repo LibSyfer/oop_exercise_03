@@ -8,7 +8,7 @@ int main(int argc, char* argv[]) {
 
     Figure* fig;
     std::vector<Figure*> v;
-    int key;
+    int key = 0;
     char buff[50];
 
     while(key < 5 && key >= 0) {
@@ -33,6 +33,10 @@ int main(int argc, char* argv[]) {
             std::cin >> *fig;
             v.push_back(fig);
         } else if(key == 2) {
+            if(v.size() == 0) {
+                std::cout << "----------------------------\n";
+                std::cout << "Empty vector.\n";
+            }
             for(int i = 0; i < v.size(); ++i) {
                 p = v[i]->GeomCenter();
                 std::cout << "----------------------------\n";

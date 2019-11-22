@@ -19,7 +19,7 @@ double Figure::PolygonArea(const Point* Peaks, const int Size) {
         A = A + (Peaks[i].X * Peaks[i + 1].Y);
     }
     A = A + (Peaks[Size-1].X * Peaks[0].Y);
-    for(int i = 0; i < Size; ++i) {
+    for(int i = 0; i < Size - 1; ++i) {
         A = A - (Peaks[i+1].X * Peaks[i].Y);
     }
     A = A - (Peaks[0].X * Peaks[Size-1].Y);
